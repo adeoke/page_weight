@@ -17,7 +17,7 @@ module PageWeight
 
       it "should return the html pageweight when a valid url is supplied" do
         url = "http://localhost:3000"
-        PageWeight.of_html_for(url).should == 1841
+        PageWeight.of_html_for(url).should == 1837
       end
     end
   end
