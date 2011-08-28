@@ -1,0 +1,31 @@
+body {
+	background: #f3f2f3;
+	color: #000000;
+	font-family: Trebuchet MS, Arial, Times New Roman;
+	font-size: 12px;
+}
+
+#wrapper {
+	background: #FFFFFF;
+	margin: 60px auto;
+	width: 900px;
+	height: 630px;
+}
+
+#header {
+	background: #838283;
+	height: 250px;
+	width: 900px;
+}
+
+#content {
+	background: #FFFFFF;
+	width: 900px;
+	height: 200px;
+}
+
+#footer {
+	background: #838283;
+	height: 180px;
+	width: 900px;
+}
