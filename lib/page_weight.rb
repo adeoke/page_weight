@@ -7,6 +7,7 @@ module PageWeight
     def self.of_html_for(input)
       parsed_url = URL.builder(input)
       url_response = HTTP.response_for(parsed_url)
+      Parser.html_body_content_for(url_response)
     end
   end
 
@@ -36,5 +37,15 @@ module PageWeight
     def self.response_for(input)
       Net::HTTP.get_response(input)
     end
+  end
+
+  class Parser
+    def self.html_body_content_for(input)
+      input.body
+    end
+  end
+
+  class Reporter
+    
   end
 end
