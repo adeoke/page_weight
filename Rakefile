@@ -7,7 +7,7 @@ require 'rake/testtask'
 require 'spec/rake/spectask'
 
 spec = Gem::Specification.new do |s|
-  s.name = 'page_weight'
+  s.name = 'pageweight'
   s.version = '0.0.1'
   s.has_rdoc = true
   s.extra_rdoc_files = ['README', 'LICENSE']
@@ -18,6 +18,7 @@ spec = Gem::Specification.new do |s|
   s.files = %w(LICENSE README Rakefile) + Dir.glob("{bin,lib,spec}/**/*")
   s.require_path = "lib"
   s.bindir = "bin"
+  s.add_dependency('nokogiri')
 end
 
 Rake::GemPackageTask.new(spec) do |p|
