@@ -1,3 +1,6 @@
 nbproject/
 test_site/log/
 test_site/tmp/
+test_site/app/
+test_site/config/
+test_site/db/
