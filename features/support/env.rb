@@ -1,5 +1,5 @@
 require 'rubygems'
 
-$: << File.expand_path('../../../lib', __FILE__)
+$: << "./lib"
 
 require 'page_weight'
