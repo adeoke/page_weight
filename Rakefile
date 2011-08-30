@@ -9,7 +9,7 @@ require 'cucumber'
 require 'cucumber/rake/task'
 
 spec = Gem::Specification.new do |s|
-  s.name = 'pageweight'
+  s.name = 'page_weight'
   s.version = '0.0.1'
   s.has_rdoc = true
   s.extra_rdoc_files = ['README', 'LICENSE']
@@ -17,7 +17,7 @@ spec = Gem::Specification.new do |s|
   s.description = s.summary
   s.author = 'Adebola Oke'
   s.email = 'adesmail.100@gmail.com'
-  s.files = %w(LICENSE README Rakefile) + Dir.glob("{bin,lib,spec}/**/*")
+  s.files = %w(LICENSE README Rakefile) + Dir.glob("{bin,lib}/**/*")
   s.require_path = "lib"
   s.bindir = "bin"
   s.add_dependency('nokogiri')
