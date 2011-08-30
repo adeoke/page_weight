@@ -1,10 +1,12 @@
 require 'rubygems'
 require 'rake'
 require 'rake/clean'
-require 'rake/gempackagetask'
-require 'rake/rdoctask'
+require 'rubygems/package_task'
+require 'rdoc/task'
 require 'rake/testtask'
 require 'rspec/core/rake_task'
+require 'cucumber'
+require 'cucumber/rake/task'
 
 spec = Gem::Specification.new do |s|
   s.name = 'pageweight'
@@ -21,7 +23,7 @@ spec = Gem::Specification.new do |s|
   s.add_dependency('nokogiri')
 end
 
-Rake::GemPackageTask.new(spec) do |p|
+Gem::PackageTask.new(spec) do |p|
   p.gem_spec = spec
   p.need_tar = true
   p.need_zip = true
@@ -36,14 +38,13 @@ Rake::RDocTask.new do |rdoc|
   rdoc.options << '--line-numbers'
 end
 
-Rake::TestTask.new do |t|
-  t.test_files = FileList['test/**/*.rb']
+RSpec::Core::RakeTask.new do |t|
+  t.ruby_opts = "-I lib"
 end
 
-#RSpec::Core::RakeTask.new do |t|
-#  t.pattern = FileList['spec/**/*.rb']
-#  t.libs << Dir["lib"]
-#end
+Cucumber::Rake::Task.new do |t|
+  t.cucumber_opts = "--format pretty -q"
+end
 
 task :push => :gem do |t|
   sh "gem push pkg/#{spec.name}-#{spec.version}.gem"
